@@ -6,7 +6,7 @@ body {
     color: #343a40;
 }
 
-/* Header */
+/* Encabezado */
 header {
     background-color: #343a40;
     color: white;
@@ -29,12 +29,13 @@ header nav ul li a {
     text-decoration: none;
 }
 
-/* Main Section */
-.featured-products {
+
+.featured-products{
     display: flex;
-    justify-content: space-around;
+    justify-content: center;
     flex-wrap: wrap;
     padding: 2rem;
+    gap: 1rem;
 }
 
 .product-card {
@@ -44,9 +45,10 @@ header nav ul li a {
     box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
     padding: 1rem;
     text-align: center;
-    width: 300px;
-    margin: 1rem;
     transition: transform 0.3s ease, box-shadow 0.3s ease;
+    flex: 0 1 calc(33.33% - 1rem); ;
+    max-width: 300px;
+    box-sizing: border-box;
 }
 
 .product-card img {
@@ -80,7 +82,7 @@ header nav ul li a {
     transform: scale(1.05);
 }
 
-/* Footer */
+/* pie de pagina */
 footer {
     text-align: center;
     padding: 1rem;
@@ -88,10 +90,13 @@ footer {
     color: white;
 }
 
-/* Responsive Design */
+
 @media (max-width: 768px) {
     .featured-products {
-        flex-direction: column;
-        align-items: center;
+        justify-content: center; /* Centra los productos en pantallas medianas */
+    }
+
+    .product-card {
+        flex: 0 1 calc(100% - 1rem);
     }
 }
